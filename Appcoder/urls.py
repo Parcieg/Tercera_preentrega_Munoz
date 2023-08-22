@@ -7,10 +7,12 @@ from .views import (
     estudiantes,
     cursos,
     entregables,
+    inicio,
 )
 
 
 urlpatterns = [
+    path("Inicio/", inicio),
     path("crearcurso/", crear_curso),
     path("Listacursos/", lista_cursos),
     path("profesores/", profesores, name="profesores"),

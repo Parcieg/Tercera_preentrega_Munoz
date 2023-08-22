@@ -3,6 +3,14 @@ from django.http import HttpResponse
 from .models import Curso, Estudiante, Profesor, Entregable
 
 
+def lista_profesores(request):
+    profesores = Profesor.objects.all()
+    respuesta = ""
+    for profesor in profesores:
+        respuesta += f"{profesor.nombre} {profesor.apellido}-{profesor.profesion} <br>"
+    return HttpResponse(respuesta)
+
+
 def crear_curso(request):
     nombre_curso = "R2"
     comision_curso = 38988
@@ -34,7 +42,8 @@ def estudiantes(request):
 
 
 def cursos(request):
-    return render(request, "Appcoder/cursos.html")
+    cursos = Curso.objects.all()
+    return render(request, "Appcoder/cursos.html", {"cursos": cursos})
 
 
 def entregables(request):
