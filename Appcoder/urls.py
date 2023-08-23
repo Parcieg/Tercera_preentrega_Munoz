@@ -12,7 +12,7 @@ from .views import (
 
 
 urlpatterns = [
-    path("Inicio/", inicio),
+    path("inicio/", inicio, name="inicio"),
     path("crearcurso/", crear_curso),
     path("Listacursos/", lista_cursos),
     path("profesores/", profesores, name="profesores"),

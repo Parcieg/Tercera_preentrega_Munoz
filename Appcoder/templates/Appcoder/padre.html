@@ -19,7 +19,7 @@
     <!-- page navbar -->
     <nav class="page-navbar" data-spy="affix" data-offset-top="10">
         <ul class="nav-navbar container">
-            <li class="nav-item"><a href="{% url 'Inicio' %}"class="nav-link">Inicio</a></li>
+            <li class="nav-item"><a href= "{% url 'inicio'%} " class="nav-link">Inicio</a></li>
             <li class="nav-item"><a href="{% url 'cursos'%}" class="nav-link">Cursos</a></li>
             <li class="nav-item"><a href="{% url 'profesores'%}" class="nav-link">Profesores</a></li>
             <li class="nav-item"><a href="{% url 'estudiantes'%}" class="nav-link">Estudiantes</a></li>
@@ -75,19 +75,6 @@
     <!--footer & pre footer -->
     <div class="contact-section">
         <div class="overlay"></div>
-        <!-- container -->
-        <div class="container">
-            <div class="col-md-10 col-lg-8 m-auto">
-                <h6 class="title mb-2">Contact Us</h6>
-                <p class="mb-5">Feel Free To Drop Us A Line.</p>
-                <form action="" class="form-group">
-                    <input type="text" size="50" class="form-control" placeholder="Your Name" required>
-                    <input type="email" class="form-control" placeholder="Enter Email"requried>
-                    <textarea name="comment" id="comment" rows="6"   class="form-control" placeholder="Write Something"></textarea>
-                    <input type="submit" value="Send Message" class="form-control">
-                </form>
-            </div>
-
             <!-- footer -->
             <footer class="footer">
                 <p class="infos">&copy; <script>document.write(new Date().getFullYear())</script>, Made with <i class="ti-heart text-danger"></i> by <a href="http://www.devcrud.com">DevCRUD</a></p>       

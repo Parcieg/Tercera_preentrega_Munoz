@@ -5,38 +5,17 @@
 {% block titulo %}bienvenido al Inicio{% endblock %}
 
 {% block Contenido1  %}
-
-        <!-- row -->
-        <div class="row mb-4">
-            <div class="col-md-4">
-                <a href="javascript:void(0)" class="overlay-img">
-                    <img src="{%static 'Appcoder/imgs/img-5.jpg'%}" alt="">  
-                    <div class="overlay"></div> 
-                    <div class="des">
-                        <h1 class="title" style="text-align:center">Muchos cursos</h1>
-                        <h6 class="subtitle" style= "text-align:center"> miralos aqui</p>
-                        <p style="text-align:center"> Luego aparecen.</p>
-                    </div>          
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="javascript:void(0)" class="overlay-img">
-                    <img src="{%static 'Appcoder/imgs/img-6.jpg'%}" alt="Aqui va otro texto">
-                    <div class="des">
-                        <h1 class="title" style="text-align:center">Profesores</h1>
-                        <h6 class="subtitle" style= "text-align:center"> miralos aqui</p>
-                        <p style="text-align:center"> Luego aparecen.</p>
-                    </div>          
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="javascript:void(0)" class="overlay-img">
-                    <img src="{%static 'Appcoder/imgs/img-7.jpg'%}" alt="Que hacemos aqui?">
-                    <div class="des">
-                        <h1 class="title" style="text-align:center">Precios</h1>
-                        <h6 class="subtitle" style= "text-align:center"> miralos aqui</p>
-                        <p style="text-align:center"> $$$$$$$.</p>
-                    </div>          
-                </a>
-            </div>          
-        </div><!-- end of row -->        {% endblock  %}
+<div class="container">
+    <div class="col-md-20 col-lg-6 m-auto">
+        <h6 class="title mb-2">Contacto</h6>
+        <p class="mb-5">Te llamamos.</p>
+            <form action={% url 'inicio' %} method="post">
+            {% csrf_token %}
+            <table>
+            {{ formulario.as_table }}
+            </table>
+            <input type="submit" value="Agregar">
+            </form>
+            <h3>{{ mensaje }}</h3>
+            </form>
+    </div>{% endblock  %}

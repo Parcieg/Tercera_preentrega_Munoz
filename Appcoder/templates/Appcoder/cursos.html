@@ -1,26 +1,28 @@
 {% extends  'Appcoder/padre.html' %}
 {%load static%}
 
-{% block pestana %}Inicio{% endblock %}
-{% block titulo %}bienvenido al Inicio{% endblock %}
+{% block pestana %}Cursos{% endblock %}
+{% block titulo %}bienvenido a Cursos{% endblock %}
 
 {% block Contenido1  %}
-<div class="row mb-5">
+<div class="row mb-6">
     <div class="col-md-6">
         <a href="javascript:void(0)" class="card">
-            <img src="{%static 'Appcoder/imgs/blog-1.jpg'%}" class="card-img" alt="ya estas abajo">
+            <img src="{%static 'Appcoder/imgs/blog-1.jpg'%}" class="card-img" alt="">
             <div class="card-body">
                 <h6 class="title mb-2">Ingresar nuevo curso</h6>
-                <p class="mb-5">    Ingrese el numero de la seccion </p>
-                <form action="" class="form-group">
-                    <input type="text" size="50" class="form-control" placeholder="Nombre" required>
-                    <input type="number" class="form-control" placeholder="Numero de seccion"requried>
-                    <textarea name="comment" id="comment" rows="6"   class="form-control" placeholder="Write Something"></textarea>
-                    <input type="submit" value="Send Message" class="form-control">
-                </form>
+                    <form action={% url 'cursos' %} method="post"> 
+                    {% csrf_token %}
+                    <table>
+                    {{ formulario.as_table }}
+                    </table>
+                    <input type="submit" value="Agregar">
+                    </form>
+                    <h3>{{ mensaje }}</h3>
             </div>
         </a>
-    </div>  
+    </div> 
+
     <div class="col-md-6">
         <a href="javascript:void(0)" class="card">
             <img src="{%static 'Appcoder/imgs/blog-2.jpg'%}" class="card-img" alt="">
@@ -38,4 +40,6 @@
     </div>  
 </div><!-- end of row -->
 
-<a href="#">All Posts <i class="ti-angle-double-right angle"></i></a>
+<a href="#">All Posts <i class="ti-angle-double-right angle"></i></a>{% endblock %}
+
+
